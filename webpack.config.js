@@ -1,5 +1,12 @@
 const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
+
+module.exports = {
+  output: {
+    publicPath: 'auto',
+    scriptType: 'text/javascript'
+  },
+}
 module.exports = withModuleFederationPlugin({
 
   remotes: {
