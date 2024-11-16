@@ -1,0 +1,6 @@
+<mat-drawer-container class="w-full min-h-screen bg-red-500" hasBackdrop="true">
+  <mat-drawer #drawer mode="side">I'm a drawer</mat-drawer>
+  <mat-drawer-content>
+    <app-toolbar (openDrawer)="drawer.toggle()" />
+  </mat-drawer-content>
+</mat-drawer-container>
