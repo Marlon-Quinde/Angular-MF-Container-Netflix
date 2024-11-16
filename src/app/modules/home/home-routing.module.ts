@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    pathMatch: 'full'
+    children: [
+      {
+        path: 'peliculas',
+        loadChildren: () => import('../peliculas/peliculas.module').then( m => m.PeliculasModule)
+      }
+    ]
   },
 ];
 
