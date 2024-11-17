@@ -1,0 +1,7 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6">
+  @for (item of listMovies; track $index) {
+    <app-tarjeta-pelicula [isFavorite]="true" [movie]="item" (idsMovie)="removeMovie($event)" />
+  } @empty {
+    <p>No tienes peliculas favoritas</p>
+  }
+</div>

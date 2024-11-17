@@ -1,0 +1,49 @@
+
+<div class="bg-black text-white">
+
+    <!-- Sección de fondo -->
+    <div class="relative w-full h-screen">
+        <img src="https://th.bing.com/th/id/R.04bad3b5d1af392639a439beb87237f7?rik=DqQHMS77ZEhlDg&pid=ImgRaw&r=0" alt="Fondo de Netflix" class="w-full h-full object-cover opacity-60">
+
+        <!-- Contenedor de la forma de login -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full sm:w-96 p-8 bg-black bg-opacity-60 rounded-lg">
+
+            <!-- Logo de Netflix -->
+            <div class="mb-8 text-center">
+                <img routerLink="/home/peliculas/lista" src="https://i2.wp.com/www.verifiedmom.com/wp-content/uploads/2014/07/Netflix_Logo_Print_OneColorPMS.png?fit=8685%2C2333&ssl=1" alt="Netflix Logo" class="w-32 mx-auto">
+            </div>
+
+            <!-- Formulario de inicio de sesión -->
+            <form [formGroup]="signInForm" class="space-y-4">
+
+                <div class="w-full" >
+                  <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Correo Electronico</mat-label>
+                    <input matInput class="w-full" formControlName="Email" >
+                    <mat-error>{{getErrors('Correo Electronico', 'Email')}}</mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="w-full" >
+                  <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput class="w-full" formControlName="Password" >
+                    <mat-error>{{getErrors('Contraseña', 'Password')}}</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Botón de inicio de sesión -->
+                <button mat-flat-button (click)="signIn()" class="w-full py-3 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600">Iniciar sesión</button>
+            </form>
+
+            <!-- Enlaces debajo del formulario -->
+            <div class="mt-4 text-sm text-center">
+                <a href="#" class="text-gray-400 hover:text-white">¿Olvidaste la contraseña?</a>
+            </div>
+
+            <div class="mt-4 text-sm text-center">
+                <p class="text-gray-400">¿Nuevo en Netflix? <a href="#" class="text-white hover:underline">Regístrate ahora</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>

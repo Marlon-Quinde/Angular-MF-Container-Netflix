@@ -1,16 +1,21 @@
 <mat-toolbar class="flex justify-between">
-  <button (click)="emitOpenDrawer()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div class="flex items-center">
-    <span class="">My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
+  <div class="flex items-center gap-4">
+    @if (getUserSesion()) {
+      <button (click)="emitOpenDrawer()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    }
+    <div class="text-center">
+      <img routerLink="/home/peliculas/lista" src="https://i2.wp.com/www.verifiedmom.com/wp-content/uploads/2014/07/Netflix_Logo_Print_OneColorPMS.png?fit=8685%2C2333&ssl=1" alt="Netflix Logo" class="w-32 mx-auto">
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    @if (getUserSesion()) {
+      <a class="no-underline text-white">Bienvenido, {{getUserInfo().nickname}} </a>
+      <button mat-flat-button (click)="logout()" class="text-white">Cerrar sesion</button>
+    } @else {
+      <button mat-flat-button  (click)="signIn()" class="no-underline text-white">Iniciar Sesion</button>
+    }
   </div>
 </mat-toolbar>
 

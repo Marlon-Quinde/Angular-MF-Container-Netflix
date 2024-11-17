@@ -10,7 +10,11 @@ const routes: Routes = [
       {
         path: 'peliculas',
         loadChildren: () => import('../peliculas/peliculas.module').then( m => m.PeliculasModule)
-      }
+      },
+      {
+        path: 'remote',
+        loadChildren: () => import('usuario/UsuarioModule').then(m => m.UsuarioModule)
+      },
     ]
   },
 ];

@@ -4,20 +4,30 @@ import { CommonModule } from '@angular/common';
 import { PeliculasRoutingModule } from './peliculas-routing.module';
 import { ListaPeliculasComponent } from './pages/lista-peliculas/lista-peliculas.component';
 import { TarjetaPeliculaComponent } from './components/tarjeta-pelicula/tarjeta-pelicula.component';
-import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { PeliculasService } from './services/peliculas.service';
+import { SharedModule } from '../../shared/shared.module';
+import { DetallePeliculasComponent } from './pages/detalle-peliculas/detalle-peliculas.component';
+import { ListaPeliculasFavoritasComponent } from './pages/lista-peliculas-favoritas/lista-peliculas-favoritas.component';
 
 
 @NgModule({
   declarations: [
-    ListaPeliculasComponent
+    ListaPeliculasComponent,
+    DetallePeliculasComponent,
+    ListaPeliculasFavoritasComponent,
+    TarjetaPeliculaComponent
   ],
   imports: [
     CommonModule,
     PeliculasRoutingModule,
+
     // HttpClientModule,
 
-    TarjetaPeliculaComponent,
+    // ? Modules
+    SharedModule,
+
+
   ],
   providers: [
     PeliculasService,
