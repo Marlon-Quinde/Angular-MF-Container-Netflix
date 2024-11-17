@@ -1,0 +1,63 @@
+<div class="bg-gray-900 text-white font-sans">
+  <!-- Encabezado -->
+  <header class="bg-black p-5">
+    <div class="container pl-1">
+      <h1 class="text-3xl font-bold">Recomendación de Películas</h1>
+    </div>
+
+    <form >
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Tus generos Favoritos</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Fruit selection">
+          @for (genero of generosSelected(); track $index) {
+            <mat-chip-row (removed)="remove(genero)">
+              {{genero.name}}
+              <button matChipRemove [attr.aria-label]="'remove ' + genero.name">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+        </mat-chip-grid>
+        <input
+          name="currentFruit"
+          placeholder="Seleccione..."
+          #fruitInput
+          [formControl]="inputChip"
+          [matChipInputFor]="chipGrid"
+          [matAutocomplete]="auto"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+        />
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          @for (genero of generos; track genero) {
+            <mat-option [value]="genero">{{genero.name}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <!-- <mat-chip-set aria-label="Fish selection">
+      <div class="flex space-x-4 flex-wrap justify-center">
+        @for (genero of generos; track $index) {
+        <mat-chip>{{ genero.name }}</mat-chip>
+        }
+      </div>
+    </mat-chip-set> -->
+  </header>
+
+  <!-- Sección de Recomendaciones -->
+  <section id="recommendations" class="container mx-auto py-10">
+    <h2 class="text-2xl font-semibold mb-5">Recomendaciones para ti</h2>
+
+    <div
+      id="movies-container"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+    >
+      <!-- Aquí se cargarán las recomendaciones -->
+
+      @for (item of peliculas; track $index) {
+      <app-tarjeta-pelicula [movie]="item" />
+      }
+    </div>
+  </section>
+</div>

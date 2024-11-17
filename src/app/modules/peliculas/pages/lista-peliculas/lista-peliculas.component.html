@@ -1,7 +1,9 @@
 <div>
   <form [formGroup]="searchMovieForm" action="">
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-      <div class="sm:col-span-2"></div>
+      <div class="sm:col-span-2 container mx-auto flex justify-between items-center pl-6">
+        <h1 class="text-3xl font-bold text-center ">Listado de peliculas</h1>
+      </div>
       <mat-form-field appearance="outline" class="w-full">
         <mat-label>Idiomas</mat-label>
         <mat-select formControlName="language">
@@ -24,7 +26,7 @@
   </form>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
   @for (item of listMovies; track $index) {
     <app-tarjeta-pelicula [movie]="item" />
   }

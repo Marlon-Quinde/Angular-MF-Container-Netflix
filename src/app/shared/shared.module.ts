@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 
 // ? Angular Material,
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
 
     // ? Material
+    MatAutocompleteModule,
     MatButtonModule,
     MatChipsModule,
     MatExpansionModule,

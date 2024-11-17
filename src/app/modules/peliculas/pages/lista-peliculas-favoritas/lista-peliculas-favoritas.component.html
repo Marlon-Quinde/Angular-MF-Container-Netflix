@@ -1,7 +1,10 @@
+<div class="container pl-6">
+  <h1 class="text-3xl font-bold">Tus peliculas favoritas</h1>
+</div>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6">
   @for (item of listMovies; track $index) {
     <app-tarjeta-pelicula [isFavorite]="true" [movie]="item" (idsMovie)="removeMovie($event)" />
   } @empty {
-    <p>No tienes peliculas favoritas</p>
+    <p class="text-center sm:col-span-2 md:col-span-3 lg:col-span-6">No tienes peliculas favoritas</p>
   }
 </div>

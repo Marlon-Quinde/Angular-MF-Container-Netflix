@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { noAuthGuard } from '../../shared/guards/noAuth.guard';
 
 const routes: Routes = [
   {
@@ -13,8 +14,14 @@ const routes: Routes = [
       },
       {
         path: 'remote',
+        canActivate: [noAuthGuard],
         loadChildren: () => import('usuario/UsuarioModule').then(m => m.UsuarioModule)
       },
+      {
+        path: '',
+        redirectTo: 'peliculas',
+        pathMatch: 'full'
+      }
     ]
   },
 ];

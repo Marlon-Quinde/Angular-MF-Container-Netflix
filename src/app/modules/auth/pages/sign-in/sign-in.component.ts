@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthFormI } from '../../interfaces/auth.interface';
@@ -13,6 +13,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignInComponent {
   public signInForm: FormGroup;
+  public hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
+  }
 
   /**
    *

@@ -9,6 +9,7 @@ import { PeliculasService } from './services/peliculas.service';
 import { SharedModule } from '../../shared/shared.module';
 import { DetallePeliculasComponent } from './pages/detalle-peliculas/detalle-peliculas.component';
 import { ListaPeliculasFavoritasComponent } from './pages/lista-peliculas-favoritas/lista-peliculas-favoritas.component';
+import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ListaPeliculasFavoritasComponent } from './pages/lista-peliculas-favori
     ListaPeliculasComponent,
     DetallePeliculasComponent,
     ListaPeliculasFavoritasComponent,
-    TarjetaPeliculaComponent
+    TarjetaPeliculaComponent,
+    RecomendacionesComponent
   ],
   imports: [
     CommonModule,

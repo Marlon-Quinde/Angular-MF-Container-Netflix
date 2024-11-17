@@ -26,10 +26,20 @@
                 <div class="w-full" >
                   <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput class="w-full" formControlName="Password" >
+                    <input matInput formControlName="Password"  [type]="hide() ? 'password' : 'text'" />
+                    <button
+                      mat-icon-button
+                      matSuffix
+                      (click)="clickEvent($event)"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide()"
+                    >
+                      <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
                     <mat-error>{{getErrors('Contraseña', 'Password')}}</mat-error>
                   </mat-form-field>
                 </div>
+
 
                 <!-- Botón de inicio de sesión -->
                 <button mat-flat-button (click)="signIn()" class="w-full py-3 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600">Iniciar sesión</button>
