@@ -10,3 +10,14 @@ export interface UsuarioI {
   email:     string;
   nickname:  string;
 }
+
+
+export interface SignUpFormI {
+  nombres:   string;
+  apellidos: string;
+  email:     string;
+  nickname:  string;
+  password:  string;
+  repeatPassword: string;
+  terminosYCondiciones?: boolean
+}

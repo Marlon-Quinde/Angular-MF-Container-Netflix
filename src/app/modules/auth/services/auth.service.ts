@@ -17,4 +17,10 @@ export class AuthService {
     return this._http.post<ResponseI<UsuarioI>>(url, payload)
   }
 
+  signUp(payload: UsuarioI){
+    const url: string  = `${this._baseUrl}/Usuarios`
+    return this._http.post<ResponseI<string>>(url, payload)
+  }
+
+
 }

@@ -6,6 +6,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 // ? Angular Material,
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     // ? Material
     MatAutocompleteModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatChipsModule,
     MatExpansionModule,
     MatFormFieldModule,

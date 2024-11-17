@@ -1,0 +1,117 @@
+<div class="bg-gray-900 text-white font-sans relative">
+  <img
+    src="https://th.bing.com/th/id/R.04bad3b5d1af392639a439beb87237f7?rik=DqQHMS77ZEhlDg&pid=ImgRaw&r=0"
+    alt="Fondo de Netflix"
+    class="w-full h-full object-cover opacity-60"
+  />
+  <!-- Contenedor Principal -->
+  <div
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-80 p-8 rounded-lg max-w-md w-full"
+  >
+    <!-- Título -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold">Crea tu cuenta</h1>
+      <p class="text-gray-400">
+        Empieza a disfrutar de las mejores series y películas
+      </p>
+    </div>
+    <form [formGroup]="signUpForm">
+      <!-- Formulario de Registro -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+        <!-- Nombres -->
+        <div class="mb-4 sm:col-span-2">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Nombres</mat-label>
+            <input matInput class="w-full" formControlName="nombres" />
+            <mat-error>{{ getErrors("Nombres", "nombres") }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Apellidos -->
+        <div class="mb-4 sm:col-span-2">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input matInput class="w-full" formControlName="apellidos" />
+            <mat-error>{{ getErrors("Apellidos", "apellidos") }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- NickName -->
+        <div class="mb-4">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Nickname</mat-label>
+            <input matInput class="w-full" formControlName="nickname" />
+            <mat-error>{{ getErrors("Nickname", "nickname") }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="mb-4">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Correo electronico</mat-label>
+            <input matInput class="w-full" formControlName="email" />
+            <mat-error>{{
+              getErrors("Correo electronico", "email")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-4">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput class="w-full" formControlName="password" />
+            <mat-error>{{ getErrors("Password", "password") }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Confirmar Contraseña -->
+        <div class="mb-4">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Confirmar contraseña</mat-label>
+            <input matInput class="w-full" formControlName="repeatPassword" />
+            <mat-error>{{
+              getErrors("Este campo", "repeatPassword")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Aceptar términos -->
+        <div class="sm:col-span-2">
+          <div class="mb-6">
+            <label class="flex items-center text-sm text-gray-300">
+              <mat-checkbox formControlName="terminosYCondiciones" class="example-margin"
+                >Acepto los
+                <a href="#" class="text-red-500"
+                  >términos y condiciones</a
+                ></mat-checkbox
+              >
+            </label>
+          </div>
+
+          <!-- Botón de registro -->
+          <div class="mb-4">
+            <button
+              mat-flat-button
+              class="w-full"
+              (click)="signUp()"
+              type="submit"
+            >
+              Registrarse
+            </button>
+          </div>
+
+          <!-- Enlace para iniciar sesión -->
+          <div class="text-center text-gray-400">
+            <p>
+              ¿Ya tienes una cuenta?
+              <a routerLink="/auth/sign-in" class="text-red-500 hover:underline"
+                >Inicia sesión</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
